@@ -1,0 +1,33 @@
+{
+  "default": "deepseek",
+  "platforms": {
+    "deepseek": {
+      "base_url": "https://api.deepseek.com/anthropic",
+      "api_key": "",
+      "model": "deepseek-v4-pro",
+      "small_model": "deepseek-v4-flash",
+      "description": "DeepSeek - High performance reasoning model"
+    },
+    "kimi": {
+      "base_url": "https://api.moonshot.ai/anthropic",
+      "api_key": "",
+      "model": "kimi-k2.6",
+      "small_model": "kimi-k2.6",
+      "description": "Moonshot Kimi - Chinese-optimized model"
+    },
+    "openrouter": {
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "",
+      "model": "deepseek/deepseek-chat",
+      "small_model": "deepseek/deepseek-chat",
+      "description": "OpenRouter - Access 200+ models"
+    },
+    "gemini": {
+      "base_url": "http://127.0.0.1:4000",
+      "api_key": "sk-dummy-token",
+      "model": "gemini-pro",
+      "small_model": "gemini-flash",
+      "description": "Google Gemini via LiteLLM (requires local proxy on port 4000)"
+    }
+  }
+}
