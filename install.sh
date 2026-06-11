@@ -108,7 +108,26 @@ echo -e "${GREEN}✅ Installation Complete!${NC}"
 echo "═══════════════════════════════════════════════════════════════"
 echo ""
 
-# Check PATH
+# Detect shell profile file
+detect_shell_profile() {
+  local shell_name
+  shell_name="$(basename "${SHELL:-}")"
+  if [ "$shell_name" = "zsh" ] || [ -n "${ZSH_VERSION:-}" ]; then
+    echo "$HOME/.zshrc"
+  elif [ "$shell_name" = "bash" ] || [ -n "${BASH_VERSION:-}" ]; then
+    if [ "$(uname)" = "Darwin" ]; then
+      echo "$HOME/.bash_profile"
+    else
+      echo "$HOME/.bashrc"
+    fi
+  else
+    echo "$HOME/.profile"
+  fi
+}
+
+PATH_LINE="export PATH=\"$BIN_DIR:\$PATH\""
+
+# Check PATH and auto-inject into shell profile if needed
 case ":$PATH:" in
   *":$BIN_DIR:"*)
     echo -e "${GREEN}✓${NC} $BIN_DIR is already in your PATH"
@@ -119,14 +138,23 @@ case ":$PATH:" in
     echo "  3. Start using: $TOOL_NAME"
     ;;
   *)
-    echo -e "${RED}⚠${NC}  $BIN_DIR is not in your PATH"
+    SHELL_PROFILE="$(detect_shell_profile)"
+
+    if [ -f "$SHELL_PROFILE" ] && grep -qF "$BIN_DIR" "$SHELL_PROFILE" 2>/dev/null; then
+      echo -e "${GREEN}✓${NC} $BIN_DIR already in $SHELL_PROFILE (reload required)"
+    else
+      echo "" >> "$SHELL_PROFILE"
+      echo "# Added by $TOOL_NAME installer" >> "$SHELL_PROFILE"
+      echo "$PATH_LINE" >> "$SHELL_PROFILE"
+      echo -e "${GREEN}✓${NC} PATH ditambahkan ke $SHELL_PROFILE"
+    fi
+
     echo ""
-    echo "Add this to your shell profile (~/.bashrc or ~/.zshrc):"
+    echo "Jalankan salah satu perintah berikut untuk mengaktifkan:"
     echo ""
-    echo "  export PATH=\"$BIN_DIR:\$PATH\""
+    echo -e "  ${BLUE}source $SHELL_PROFILE${NC}"
     echo ""
-    echo "Then run:"
-    echo "  source ~/.zshrc"
+    echo "Atau buka terminal baru, lalu jalankan:"
     echo "  $TOOL_NAME setup"
     ;;
 esac
