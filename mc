@@ -147,6 +147,7 @@ EOFCONFIG
 
 setup_platform() {
   local platform=$1
+  local api_key=""
   
   case $platform in
     deepseek)
@@ -154,19 +155,59 @@ setup_platform() {
       echo "   Get it at: https://platform.deepseek.com"
       read -sp "API Key: " api_key
       echo ""
+      
+      if [ -n "$api_key" ]; then
+        # Save to config using jq
+        if command -v jq >/dev/null 2>&1; then
+          jq ".platforms.deepseek.api_key = \"$api_key\"" "$CONFIG_FILE" > "$CONFIG_FILE.tmp" && \
+          mv "$CONFIG_FILE.tmp" "$CONFIG_FILE"
+          log_success "DeepSeek API key saved ✓"
+        else
+          log_warn "jq not found, please edit manually: mc config"
+        fi
+      else
+        log_warn "API key is empty, skipped"
+      fi
       ;;
+      
     kimi)
       log_info "Kimi API Key"
       echo "   Get it at: https://platform.moonshot.cn"
       read -sp "API Key: " api_key
       echo ""
+      
+      if [ -n "$api_key" ]; then
+        if command -v jq >/dev/null 2>&1; then
+          jq ".platforms.kimi.api_key = \"$api_key\"" "$CONFIG_FILE" > "$CONFIG_FILE.tmp" && \
+          mv "$CONFIG_FILE.tmp" "$CONFIG_FILE"
+          log_success "Kimi API key saved ✓"
+        else
+          log_warn "jq not found, please edit manually: mc config"
+        fi
+      else
+        log_warn "API key is empty, skipped"
+      fi
       ;;
+      
     openrouter)
       log_info "OpenRouter API Key"
       echo "   Get it at: https://openrouter.ai/keys"
       read -sp "API Key: " api_key
       echo ""
+      
+      if [ -n "$api_key" ]; then
+        if command -v jq >/dev/null 2>&1; then
+          jq ".platforms.openrouter.api_key = \"$api_key\"" "$CONFIG_FILE" > "$CONFIG_FILE.tmp" && \
+          mv "$CONFIG_FILE.tmp" "$CONFIG_FILE"
+          log_success "OpenRouter API key saved ✓"
+        else
+          log_warn "jq not found, please edit manually: mc config"
+        fi
+      else
+        log_warn "API key is empty, skipped"
+      fi
       ;;
+      
     gemini)
       echo ""
       echo "═══════════════════════════════════════════════════════════"
@@ -205,10 +246,6 @@ setup_platform() {
       echo ""
       ;;
   esac
-  
-  if [ -n "$api_key" ]; then
-    log_success "$platform API key saved"
-  fi
 }
 
 # List platforms
