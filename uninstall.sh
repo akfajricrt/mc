@@ -2,7 +2,7 @@
 #
 # mc - Uninstaller
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/uninstall.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/uninstall.sh | bash
 #
 set -euo pipefail
 

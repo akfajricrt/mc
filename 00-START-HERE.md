@@ -64,14 +64,14 @@ outputs/
 
 5. **Push ke GitHub**:
    ```bash
-   git remote add origin https://github.com/yourusername/mc.git
+   git remote add origin https://github.com/akfajricrt/mc.git
    git branch -M main
    git push -u origin main
    ```
 
 6. **Test**:
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/install.sh | bash
+   curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh | bash
    ```
 
 ## 📋 File Descriptions
@@ -118,7 +118,7 @@ Sebelum publish ke GitHub, ubah:
 - [ ] `install.sh` - Line 17-21
   ```bash
   TOOL_NAME="mc"
-  REPO_OWNER="yourusername"    # ← Ganti ini
+  REPO_OWNER="akfajricrt"    # ← Ganti ini
   REPO_NAME="mc"
   ```
 
@@ -131,7 +131,7 @@ Sebelum publish ke GitHub, ubah:
 
 - [ ] `README.md` - All occurrences
   ```markdown
-  https://raw.githubusercontent.com/yourusername/mc/main/install.sh
+  https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh
                                    ↑↑↑↑↑↑↑↑↑↑↑↑↑
                                    Change this
   ```
@@ -145,10 +145,10 @@ Sebelum publish ke GitHub, ubah:
 Setelah semuanya ready, bagikan ini:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh | bash
 ```
 
-Ganti `yourusername` dengan GitHub username Anda.
+Ganti `akfajricrt` dengan GitHub username Anda.
 
 ## 📚 Quick Examples
 
@@ -252,7 +252,7 @@ Setelah semua setup, Anda punya:
 Bagikan installer command ke orang lain dan mereka bisa langsung install! 🚀
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh | bash
 ```
 
 Good luck! 🎯

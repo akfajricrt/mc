@@ -46,7 +46,7 @@ Ganti baris ini:
 ```bash
 # Line 17-21
 TOOL_NAME="mc"                    # 👈 Ubah ini jika mau nama lain
-REPO_OWNER="yourusername"         # 👈 Ubah dengan username GitHub Anda
+REPO_OWNER="akfajricrt"         # 👈 Ubah dengan username GitHub Anda
 REPO_NAME="mc"                    # 👈 Ubah jika repo punya nama lain
 REPO_RAW="https://raw.githubusercontent.com/$REPO_OWNER/$REPO_NAME/main"
 ```
@@ -85,7 +85,7 @@ Ganti bagian-bagian ini:
 
 ```markdown
 # Line 7
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh | bash
 
 # Ubah menjadi:
 curl -fsSL https://raw.githubusercontent.com/rasupii/mc/main/install.sh | bash
@@ -147,7 +147,7 @@ git config user.email "your@email.com"
 Setelah create repository, GitHub akan kasih instruksi:
 
 ```bash
-git remote add origin https://github.com/yourusername/mc.git
+git remote add origin https://github.com/akfajricrt/mc.git
 git branch -M main
 git add .
 git commit -m "Initial commit: mc - Claude Code with multiple model support"
@@ -235,7 +235,7 @@ git commit -m "Initial commit: mc - Claude Code with multiple model support"
 git push -u origin main
 
 # Verify
-# Kunjungi https://github.com/yourusername/mc
+# Kunjungi https://github.com/akfajricrt/mc
 ```
 
 ## ✅ Step 5: Test Installation
@@ -245,7 +245,7 @@ git push -u origin main
 Di terminal baru (atau logout/login):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh | bash
 ```
 
 Atau test lokal:
@@ -291,7 +291,7 @@ Di GitHub:
 ```
 Install mc:
 
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh | bash
 
 Add to PATH:
 export PATH="$HOME/.local/bin:$PATH"
@@ -332,7 +332,7 @@ git push origin v1.0.1
 Users dapat uninstall dengan:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/uninstall.sh | bash
 ```
 
 Jadi pastikan `uninstall.sh` di-commit juga:
@@ -440,7 +440,7 @@ your-github-account/
 Sebarkan installer command:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh | bash
 ```
 
 Orang lain cukup copy-paste satu baris, dan mereka sudah bisa pakai tool Anda! 🎉

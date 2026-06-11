@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh | bash
 export PATH="$HOME/.local/bin:$PATH"
 source ~/.zshrc
 ```
@@ -12,7 +12,7 @@ source ~/.zshrc
 
 ```bash
 # Automatic uninstall
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/uninstall.sh | bash
 
 # Or manual
 rm ~/.local/bin/mc
@@ -294,7 +294,7 @@ Now `mc` without args uses Kimi.
 
 ```bash
 # Check for updates
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh | bash
 
 # Or manually update
 mc --version
@@ -334,6 +334,6 @@ mc list
 ---
 
 **More Info:**
-- GitHub: https://github.com/yourusername/mc
+- GitHub: https://github.com/akfajricrt/mc
 - Claude Code: https://code.claude.com
 - API Docs: https://api-docs.deepseek.com

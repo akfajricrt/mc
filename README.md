@@ -13,7 +13,7 @@ mc deep "code"  # DeepSeek with prompt
 ## 📦 Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh | bash
 ```
 
 Add to `~/.zshrc` or `~/.bashrc`:
@@ -33,7 +33,7 @@ source ~/.zshrc
 ### Option 1: Automatic Uninstall (Recommended)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/uninstall.sh | bash
 ```
 
 This will:
@@ -268,7 +268,7 @@ npm install -g @anthropic-ai/claude-code
 
 3. Update `install.sh`:
    ```bash
-   REPO_OWNER="yourusername"
+   REPO_OWNER="akfajricrt"
    REPO_NAME="mc"
    ```
 
@@ -277,14 +277,14 @@ npm install -g @anthropic-ai/claude-code
    git init
    git add .
    git commit -m "Initial commit"
-   git remote add origin https://github.com/yourusername/mc.git
+   git remote add origin https://github.com/akfajricrt/mc.git
    git branch -M main
    git push -u origin main
    ```
 
 5. Share installation command:
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/yourusername/mc/main/install.sh | bash
+   curl -fsSL https://raw.githubusercontent.com/akfajricrt/mc/main/install.sh | bash
    ```
 
 ## 🎯 Usage Tips
